@@ -1,0 +1,324 @@
+/* Genel Ayarlar */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/arkaplan.webp");
+  background-color:#121212;
+  background-attachment: fixed;
+}
+  
+  /* Navbar */
+  .navbar {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #ff2770 !important;
+  }
+  
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    color: #fff !important;
+    transition: 0.3s;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ff2770 !important;
+  }
+  
+  /* Hero */
+  .hero-section {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+    color: #45f3ff;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  
+  /* Büyük Kartlar */
+  .top-concerts {
+    margin: 60px 0;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 40px;
+  }
+  
+  .big-card {
+    position: relative;
+    width: 340px;
+    height: 440px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    transition: 0.4s ease;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .card-row:hover .big-card {
+    transform: scale(0.95);
+  }
+  
+  .big-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 0 25px #45f3ff;
+  }
+  
+  .big-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .big-card .card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: 0.4s ease;
+    text-align: center;
+  }
+  
+  .big-card:hover .card-info {
+    transform: translateY(0);
+  }
+  
+  .big-card .card-info h5 {
+    font-size: 1.5rem;
+    color: #45f3ff;
+  }
+  
+  .big-card .card-info p {
+    color: #ddd;
+    margin: 10px 0;
+  }
+  
+  /* Bilet Al Butonu */
+  .btn-bilet-al {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ff2770;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+  
+  .btn-bilet-al:hover {
+    background-color: #e31c5f;
+    box-shadow: 0 0 15px #ff2770, 0 0 25px #ff2770;
+  }
+  
+  /* Scroll Kartlar */
+  .scroll-section h2 {
+    color: #45f3ff;
+  }
+  
+  .scrolling-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-padding: 20px;
+    scrollbar-width: none;
+  }
+  
+  .scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrolling-wrapper .card {
+    flex: 0 0 auto;
+    width: 260px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+    position: relative;
+  }
+  
+  .scrolling-wrapper .card:hover {
+    transform: scale(1.07);
+    z-index: 5;
+  }
+  
+  .scrolling-wrapper .card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .scrolling-wrapper .card-body {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .scrolling-wrapper .card-title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .scrolling-wrapper .card-text {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
+  /* Modal */
+  .modal-content {
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .card-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .scrolling-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .scrolling-wrapper .card {
+      width: 80%;
+      margin: 10px 0;
+    }
+  }
+  /* Footer */
+.footer {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(10px);
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .footer .social-icons a {
+    color: #ccc;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #ff2770;
+    transform: scale(1.2);
+  }
+  /* Scroll wrapper container sağ kaydırma efekti */
+.scroll-wrapper-container {
+    padding-left: 5%;
+  }
+
+  /* Tümünü Göster Butonu */
+  .btn-tumunu-goster {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #ff2770;
+    color: #ff2770;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  h2.text-center.mb-4 {
+    color: #ff2770; /* İstediğiniz rengi buraya yazabilirsiniz */
+  }
+  .btn-tumunu-goster:hover {
+    background-color: #ff2770;
+    color: #fff;
+    box-shadow: 0 0 15px #ff2770;
+  }
+  .custom-card {
+  background-color: #1a1a2e;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.custom-card {
+  background-color: #1a1a2e;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.custom-card .card-title {
+  font-weight: bold;
+}
+
+.custom-card .btn {
+  border-color: #fff;
+  color: #fff;
+}
+
+.custom-card .btn:hover {
+  background-color: #fff;
+  color: #1a1a2e;
+}
+
+.hakkimda-kutu {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Poppins', sans-serif;
+}
+.hakkimda-kutu h1 {
+  font-weight: 600;
+  color: #f7a600;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,195 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  background-attachment: fixed;
+}
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 550px;
+  margin: 120px auto;
+  background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+  animation: rotating 4s linear infinite;
+  border-radius: 20px;
+  filter: drop-shadow(0 15px 50px #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotating {
+  0% { --a: 0deg; }
+  100% { --a: 360deg; }
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from var(--a), #45f3ff 0%, #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
+  border-radius: 20px;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.login {
+  position: absolute;
+  inset: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  z-index: 2;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Form Kutuları */
+.formBx {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 0 40px;
+  transform: translate(-50%, -50%) translateY(150px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 1;
+}
+
+.formBx.active {
+  transform: translate(-50%, -50%) translateY(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+h2 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+h2 i {
+  color: #ff2770;
+  text-shadow: 0 0 5px #ff2770, 0 0 20px #ff2770;
+}
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  background: #ffffff10;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  outline: none;
+  color: #fff;
+  font-size: 1em;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input[type="submit"] {
+  background: #45f3ff;
+  border: none;
+  font-weight: 600;
+  color: #111;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0 0 10px #45f3ff, 0 0 40px #45f3ff;
+}
+
+.group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.group a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Giriş Yap butonuna özel stil kayıt ekranında */
+.group a#goLogin {
+  align-self: flex-start;
+  color: #ff2770;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 0.3s ease;
+}
+
+.group a#goLogin:hover {
+  text-shadow: 0 0 5px #ff2770;
+}
+
+.group a:nth-child(2) {
+  color: #ff2770;
+  font-weight: 600;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 40px 0;
+  margin-top: auto;
+}
+/* Genel Stil Ayarları */
+
+.navbar {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #ff2770 !important;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #fff !important;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff2770 !important;
+}
